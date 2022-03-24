@@ -12,24 +12,24 @@ if (isset($_POST["submit"])){
 </form>
 <?php
     if (isset($_POST["submit"])){
-        $pes = [];
+        $dataArray = [];
         for ($i=0;$i<$firstArray;$i++){
 
             for ($y=0;$y<$secondArray;$y++){
-                $pes[$i][$y] = rand();
+                $dataArray[$i][$y] = rand();
             }
         }
         $minMaxArray= [];
         $minMaxID =0;
     //    echo "<br>".count($pes)."<br>";
-        for ($i=0;$i<count($pes);$i++){
+        for ($i=0;$i<count($dataArray);$i++){
             for ($y=0;$y<$secondArray;$y++){
                 if ($i===0 && $y ===0){
-                   echo $pes[$i][$y];
+                   echo $dataArray[$i][$y];
                 }
                 else{
-                echo ", ".$pes[$i][$y];}
-                $minMaxArray[$minMaxID] =$pes[$i][$y];
+                echo ", ".$dataArray[$i][$y];}
+                $minMaxArray[$minMaxID] =$dataArray[$i][$y];
                 $minMaxID++;
             }
         }
